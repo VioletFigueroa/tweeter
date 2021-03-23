@@ -1,9 +1,11 @@
 nav {
+  display: flex;
+  
   height: 120px;
   width: 100%;
   background-color: #4056A1;
   font-color:  #FFFFFF;
-  padding: 2em
+  padding: 2em;
 }
 nav.span {
   font-family: Bungee;

@@ -31,3 +31,20 @@ body {
   font-family: 'Bungee', sans-serif;
   font-weight: 600;
  }
+ main{
+  width: 90%;
+  padding: 10%;
+  background-color: #f4f1ec;
+ }
+ main,  p{
+  justify-items: center;
+  align-items: center;
+  flex-flow: wrap;
+  flex: fit-content;
+ }
+ .container{
+   display: flex;
+   width: 100%;
+   margin: 0;
+   justify-content: center;
+ }
