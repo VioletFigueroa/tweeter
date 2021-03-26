@@ -10,12 +10,16 @@
   height: 150px;
   background-color: #f4f1ec;
 }
-footer {
+#tweet {
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 15px;
+}
+.counter{
+  font-family: Bungee;
+  font-weight: 600;
 }
 /*.new-tweet{
   justify-content: stretch;
@@ -37,10 +41,6 @@ button {
   padding-top: 10px
   color:rgb(200, 0, 255);
 }
-.counter{
-  justify-content: stretch;
-  flex-direction: row;
-  flex-flow: wrap-reverse;
-}
+
 
 */
