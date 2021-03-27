@@ -30,8 +30,8 @@ article.tweet header {
 }
 article.tweet .tweet-text {
   height: auto;
-  padding-top: 4%;
-  padding-bottom: 4%;
+  padding-top: 25px;
+  padding-bottom: 25px
 }
 article.tweet footer {
   padding-top: 1%;
