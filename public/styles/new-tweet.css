@@ -1,25 +1,29 @@
-.new-tweet{
+section.new-tweet{
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-#tweet-text{
-  border: none;
-  border-bottom: 2px solid black;
+.tweet-text{
+  border-bottom: 5px solid black;
   width: 100%;
   height: 150px;
   background-color: #f4f1ec;
+  font-family: Source Sans Pro;
+  font-weight: 300;
 }
-#tweet {
+#send-tweet{
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 15px;
-}
-.counter{
   font-family: Bungee;
   font-weight: 600;
+  padding-bottom: 65px;
+}
+#send-tweet button {
+  background-color: #4056A1;
+  color: white;
 }
 /*.new-tweet{
   justify-content: stretch;
@@ -37,10 +41,7 @@ form{
   width:100%;
   height: 400px;
 }
-button {
-  padding-top: 10px
-  color:rgb(200, 0, 255);
-}
+
 
 
 */

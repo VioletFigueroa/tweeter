@@ -1,8 +1,44 @@
-article{
-  color: #f80303;
+article.tweet {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 300px;
+  border: 5px solid black;
+  padding: 4%;
+  justify-content: space-between;
+  opacity: 0.6;
+}
+article:hover {
+  opacity: 1;
+  box-shadow: 10px 10px #c7c7c7;
+}
+article:hover #handle{
+  opacity: .6;
 }
 article.tweet header {
-  
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: space-between;
+}
+#user img {
+  vertical-align: middle;
+}
+#handle{
+  opacity: 0;
+  font-weight: 300;
+}
+article.tweet .tweet-text {
+  height: auto;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+article.tweet footer {
+  padding-top: 1%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+i {
+  font-display: auto;
 }
