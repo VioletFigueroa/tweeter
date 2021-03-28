@@ -1,40 +1,15 @@
-$(document).ready(function() {
-  
-  
-  const tweets = [
-    {
-      user: {
-        name: "Newton",
-        avatars: "https://i.imgur.com/73hZDYK.png",
-        handle: "@SirIsaac",
-      },
-      content: {
-        text:
-          "If I have seen further it is by standing on the shoulders of giants",
-      },
-      created_at: 1461116232227,
-    },
-    {
-      user: {
-        name: "Descartes",
-        avatars: "https://i.imgur.com/nlhLi3I.png",
-        handle: "@rd",
-      },
-      content: {
-        text: "Je pense , donc je suis",
-      },
-      created_at: 1461113959088,
-    },
-  ];
+// const dayjs = require('dayjs');
+//dayjs().format();
+//const relativeTime = require('dayjs/plugin/relativeTime');
+//dayjs.extend(relativeTime);
 
-
+$(document).ready(() => {
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $("#tweet-container").append($tweet);
     }
   };
-
 
   const createTweetElement = (tweet) => {
     const $tweet = $(`
@@ -50,7 +25,7 @@ $(document).ready(function() {
       ${tweet.content.text}
       </div>
       <footer>
-        <div>${tweet.created_at}</div>
+        <div>${moment(tweet.created_at).fromNow()}</div>
         <div>
           <i class="fas fa-flag" name="flag"></i>
           <i class="fas fa-retweet" name="retweet"></i>
@@ -62,6 +37,25 @@ $(document).ready(function() {
     return $tweet;
   };
 
-
-  renderTweets(tweets);
+  $("form").submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: $(this).serialize()
+    }).then(() => {
+      console.log("Ajax successful");
+    });
+  });
+  const loadTweets = () => {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+    }).then((res, err) => {
+      renderTweets(res);
+    }).catch(err => {
+      console.log(err);
+    });
+  };
+  loadTweets();
 });

@@ -28,6 +28,7 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
     <script src="https://kit.fontawesome.com/8d1766bad0.js" crossorigin="anonymous"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -35,7 +36,9 @@
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
-    
+    <!-- <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
+     -->
   </head>
 
   <body>
@@ -57,7 +60,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form>
+        <form id="compose-tweet">
           <!--<label for="tweet-text">What are you humming about?</label>-->
           <textarea
             name="text"
