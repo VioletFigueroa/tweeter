@@ -1,11 +1,7 @@
-// const dayjs = require('dayjs');
-//dayjs().format();
-//const relativeTime = require('dayjs/plugin/relativeTime');
-//dayjs.extend(relativeTime);
-
 $(document).ready(() => {
   const renderTweets = (tweets) => {
-    for (const tweet of tweets) {
+    $("#tweet-container").empty();
+    for (const tweet of tweets.reverse()) {
       const $tweet = createTweetElement(tweet);
       $("#tweet-container").append($tweet);
     }
@@ -37,16 +33,6 @@ $(document).ready(() => {
     return $tweet;
   };
 
-  $("form").submit(function(event) {
-    event.preventDefault();
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: $(this).serialize()
-    }).then(() => {
-      console.log("Ajax successful");
-    });
-  });
   const loadTweets = () => {
     $.ajax({
       method: "GET",
@@ -57,5 +43,31 @@ $(document).ready(() => {
       console.log(err);
     });
   };
+
+
+  $("form").submit(function(event) {
+    event.preventDefault();
+    const tweetLength = $("textarea.tweet-text").val().length;
+    if (tweetLength > 140) {
+      return alert(
+        "Please shorten tweet to 140 char or less;"
+      );
+    }
+    if (tweetLength <= 0) {
+      return alert(
+        "Please enter a tweet into the text box;"
+      );
+    }
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: $(this).serialize()
+    }).then(() => {
+      console.log("Ajax successful");
+      loadTweets();
+      $("textarea.tweet-text").val("");
+      $("#char-counter").val(140);
+    });
+  });
   loadTweets();
 });
