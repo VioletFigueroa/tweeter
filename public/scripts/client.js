@@ -1,4 +1,14 @@
 $(document).ready(() => {
+  // Escape funtion to protect from XSS;
+  const escape =  str => {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  /*Source:
+    https://web.compass.lighthouselabs.ca/days/w04d3/activities/497
+  
+    */
   const renderTweets = (tweets) => {
     $("#tweet-container").empty();
     for (const tweet of tweets.reverse()) {
@@ -13,12 +23,12 @@ $(document).ready(() => {
       <header>
         <div id="user">
           <img src=${tweet.user.avatars} />
-          ${tweet.user.name}
+          ${escape(tweet.user.name)}
         </div>
-        <div id="handle">${tweet.user.handle}</div>
+        <div id="handle">${escape(tweet.user.handle)}</div>
       </header>
       <div class="tweet-text">
-      ${tweet.content.text}
+      ${escape(tweet.content.text)}
       </div>
       <footer>
         <div>${moment(tweet.created_at).fromNow()}</div>
@@ -48,23 +58,16 @@ $(document).ready(() => {
   $("form").submit(function(event) {
     event.preventDefault();
     const tweetLength = $("textarea.tweet-text").val().length;
-    if (tweetLength > 140) {
-      return alert(
-        "Please shorten tweet to 140 char or less;"
-      );
-    }
-    if (tweetLength <= 0) {
-      return alert(
-        "Please enter a tweet into the text box;"
-      );
+    if (tweetLength > 140 || tweetLength <= 0) {
+      return $("#error-message").slideDown();
     }
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: $(this).serialize()
     }).then(() => {
-      console.log("Ajax successful");
       loadTweets();
+      $("#error-message").slideUp();
       $("textarea.tweet-text").val("");
       $("#char-counter").val(140);
     });

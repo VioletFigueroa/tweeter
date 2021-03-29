@@ -45,3 +45,7 @@ body {
    margin: 0;
    justify-content: center;
  }
+ #error-message {
+   display:none;
+   color: red;
+ }
