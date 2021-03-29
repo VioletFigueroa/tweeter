@@ -32,20 +32,33 @@ body {
   font-weight: 600;
  }
  main{
+  display: flex;
+  flex-direction: column;
   width: 90%;
   padding: 10%;
   background-color: #f4f1ec;
   justify-items: center;
   align-items: center;
-  flex-flow: wrap;
+  /* flex-flow: wrap; */
  }
  .container{
-   /* display: flex; */
    width: 100%;
-   margin: 0;
-   justify-content: center;
+
  }
  #error-message {
    display:none;
    color: red;
  }
+ @media (min-width: 1024px) {
+   body{
+     display: flex;
+   }
+  main {
+    width: 66.6%;
+    padding: 2%;
+    justify-content: center;
+  }
+  #error-message {
+    padding-top: 120px;
+  }
+}
