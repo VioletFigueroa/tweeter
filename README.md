@@ -13,8 +13,8 @@ so that I can read interesting content as it is sent.
 
 ## Final Product
 
-!["Screenshot of Desktop App"]()
-!["Screenshot of Tablet and Mobile App"]()
+!["Screenshot of Desktop App"](https://github.com/VioletFigueroa/tweeter/blob/master/docs/Tweeter%20Desktop%20Screenshot.png?raw=true)
+!["Screenshot of Tablet and Mobile App"](https://github.com/VioletFigueroa/tweeter/blob/master/docs/Tweeter%20Mobile%20Screenshot.png?raw=true)
 
 ## Getting Started
 
