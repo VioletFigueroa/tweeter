@@ -2,10 +2,11 @@ header {
   width: 100%;
 }
 header#top {
+  display: flex;
   flex-flow: column wrap;
   flex: fit-content;
-  display: flex;
-  height: 400px;
+  height: 520px;
+  padding-top:120px;
   justify-content: center;
   align-items: center;
   background-color: #28172b;
@@ -14,6 +15,6 @@ header#top {
 @media (min-width: 1024px) {
   header#top {
     width: 33.3%;
-    height: auto;
+    height: 700px;
   }
 }

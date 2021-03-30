@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 $(document).ready(function() {
   $(".new-tweet").on("keyup", "textarea", function() {
     const counter = $(this).parent().find(".counter");

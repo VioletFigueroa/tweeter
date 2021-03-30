@@ -7,7 +7,7 @@ section.new-tweet{
 .tweet-text{
   border-bottom: 5px solid black;
   width: 100%;
-  height: 150px;
+  height: 200px;
   background-color: #f4f1ec;
   font-family: Source Sans Pro;
   font-weight: 300;
@@ -29,6 +29,8 @@ section.new-tweet{
 @media (min-width: 1024px) {
   section.new-tweet{
     padding-top: 120px;
+    padding-left: auto;
+    padding-right: auto;
     width: 100%;
     justify-content: center;
   }

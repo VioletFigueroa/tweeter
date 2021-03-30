@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -23,41 +25,34 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- body {
-  font-family: 'Source Sans Pro', sans-serif;
+body {
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
- }
- nav {
-  font-family: 'Bungee', sans-serif;
+}
+nav {
+  font-family: "Bungee", sans-serif;
   font-weight: 600;
- }
- main{
-  display: flex;
-  flex-direction: column;
-  width: 90%;
+}
+main {
   padding: 10%;
   background-color: #f4f1ec;
-  justify-items: center;
-  align-items: center;
-  /* flex-flow: wrap; */
- }
- .container{
-   width: 100%;
+}
 
- }
- #error-message {
-   display:none;
-   color: red;
- }
- @media (min-width: 1024px) {
-   body{
-     display: flex;
-   }
-  main {
-    width: 66.6%;
-    padding: 2%;
-    justify-content: center;
+.container {
+  width: 100%;
+}
+
+#error-message {
+  display: none;
+  color: red;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    padding-left: none;
   }
+
   #error-message {
     padding-top: 120px;
   }
